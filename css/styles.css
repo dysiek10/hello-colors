@@ -1,0 +1,481 @@
+/***************************************
+GLOBAL
+****************************************/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inconsolata', monospace;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Prata', serif;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 150px;
+    margin: 0;
+}
+
+h2 {
+    font-size: 100px;
+    margin: 0;
+}
+
+h3 {
+    font-size: 50px;
+    margin: 60px 0 20px 0;
+}
+
+h4 {
+    font-size: 32px;
+    background-color: #75e3dd;
+    color: #16736e;
+    display: inline-block;
+    margin: 0 15px;
+    padding: 4px;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col {
+    width: 50%;
+}
+
+p {
+    margin: 0 0 15px 0;
+    line-height: 145%;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.extra-padding {
+    padding: 0 60px;
+}
+
+.right-aligned {
+    text-align: right;
+}
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 120px;
+    }
+
+    h2 {
+        font-size: 80px;
+    }
+
+    h3 {
+        font-size: 40px;
+    }
+
+    h4 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    h1 {
+        font-size: 95px;
+    }
+
+    h2 {
+        font-size: 65px;
+    }
+
+    h3 {
+        font-size: 32px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+}
+
+/***************************************
+NAVIGATION
+****************************************/
+
+nav {
+    padding: 25px 0;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    font-family: 'Prata', serif;
+    font-size: 22px;
+}
+
+.navigation {
+    margin: 0;
+    padding: 0 15px;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.navigation li {
+    min-width: 100px;
+    /* case z nawigacją... robiłam margin z lewej */
+    margin-right: 30px;
+}
+
+.navigation li:last-child {
+    margin-right: 0;
+}
+
+.navigation li a {
+    color: #27bcb8;
+}
+
+@media (max-width: 550px) {
+
+    nav {
+        padding: 15px 0;
+    }
+
+    .navigation {
+        flex-direction: column;
+    }
+}
+
+
+/***************************************
+HEADER
+****************************************/
+
+header.flex {
+    margin: 0;
+}
+
+.top-container {
+    max-width: 500px;
+    margin: 150px 60px;
+}
+
+.col-left,
+.col-right {
+    color: #ffffff;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    /* czemu aling items nie działa? */
+    /* miałam zdefiniowane h 100vh dla .col i 90vh dla .col left i right */
+}
+
+.col-left {
+    justify-content: flex-end;
+}
+
+.col-right {
+    justify-content: flex-start;
+}
+
+.col-left {
+    background-color: #003170;
+}
+
+.col-right {
+    background-color: #75e3dd;
+}
+
+.col-right p {
+    margin: 15px 0;
+}
+
+.scroll {
+    margin: 15px 0;
+    color: #2864b1;
+    text-align: center;
+}
+
+@media (max-width: 1200px) {
+
+    .col-left,
+    .col-right {
+        width: 100%;
+        justify-content: center;
+        height: auto;
+    }
+}
+
+
+/***************************************
+WORKS
+****************************************/
+
+.works {
+    padding: 60px 0 85px 0;
+    color: #16736e;
+}
+
+.works-img {
+    position: relative;
+    top: 25px;
+    width: 100%;
+}
+
+.works h2 {
+    color: #4dc2bd;
+}
+
+.works h3 {
+    color: #16736e;
+}
+
+.works h4 {
+    position: absolute;
+    z-index: 1;
+    /* czemu nie działa wstawienie tu top 25 px? */
+}
+
+.works .col {
+    position: relative;
+}
+
+.works h4.right-aligned {
+    right: 0;
+}
+
+.works a {
+    letter-spacing: 3px;
+    color: #2ce6dc;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    margin: 30px 0 0 0;
+}
+
+@media (max-width: 800px) {
+
+    .works .col {
+        width: 100%;
+    }
+
+    .works {
+        padding: 60px 0 0 0;
+    }
+
+    .works .flex:nth-of-type(2) {
+        flex-direction: column-reverse;
+    }
+
+    .works .flex .col a {
+        display: block;
+        margin: 30px 0;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .works {
+        padding: 30px 0 0 0;
+    }
+
+    .works a {
+        font-size: 16px;
+    }
+}
+
+
+/***************************************
+TEAM
+****************************************/
+
+.team {
+    padding: 60px 0;
+}
+
+.team h2 {
+    margin: 0 0 30px 0;
+    color: #003170;
+}
+
+.team h3 {
+    color: #306fbf;
+    margin: 0 0 60px 0;
+    line-height: 1;
+}
+
+.team img:first-of-type {
+    margin: 0 0 30px 0;
+}
+
+.team .extra-padding {
+    padding: 0 30px;
+}
+
+.team ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+@media (max-width: 1100px) {
+
+    .team {
+        padding: 60px 0 0 0;
+    }
+
+    .team .col {
+        width: 100%;
+    }
+
+    .team .col.extra-padding {
+        padding: 0 15px;
+    }
+
+    .team h3 {
+        margin: 60px 0;
+    }
+
+    .team img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .team {
+        padding: 30px 0 0 0;
+    }
+}
+
+
+/***************************************
+CONTACT
+****************************************/
+
+.contact {
+    padding: 60px 0;
+}
+
+.contact .flex {
+    margin: 0;
+    justify-content: flex-start;
+}
+
+.contact .data {
+    width: 39%;
+}
+
+.contact h2 {
+    color: #f3747b;
+}
+
+.contact img {
+    max-width: 250px;
+    margin-right: 30px;
+}
+
+.contact img:last-of-type {
+    margin-right: 0;
+}
+
+@media (max-width: 900px) {
+
+    .contact .flex {
+        justify-content: center;
+    }
+
+    .contact .data {
+        width: 100%;
+    }
+}
+
+@media (max-width: 560px) {
+
+    .contact .data,
+    h2 {
+        text-align: center;
+    }
+
+    .contact img,
+    .contact img:last-of-type {
+        margin: 0 15px 30px 15px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .contact {
+        padding: 30px 0 0 0;
+    }
+}
+
+
+/***************************************
+FOOTER
+****************************************/
+
+
+footer {
+    background-color: #f4979c;
+    min-height: 200px;
+    background-image: url(../img/socialmedia.svg);
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center;
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icons .social-icon {
+    width: 60px;
+    margin: 20px;
+}
+
+@media (max-width: 1200px) {
+
+    footer {
+        background-size: 70%;
+    }
+}
+
+@media (max-width: 900px) {
+
+    footer {
+        background-size: 90%;
+    }
+
+
+    @media (max-width: 560px) {
+
+        .social-icons .social-icon {
+            width: 45px;
+            margin: 10px;
+        }
+    }
